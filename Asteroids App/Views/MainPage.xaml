@@ -2,17 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Asteroids_App.Views.MainPage"
-             Title="Near Earth Objects">
+             Title="NASA Media">
     <CollectionView ItemsSource="{Binding Neos}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Frame Margin="5" Padding="10" BorderColor="Gray">
                     <StackLayout>
                         <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
-                        <Label Text="Diametro estimado: {Binding EstimatedDiameterMin:F2} - {Binding EstimatedDiameterMax:F2} km"/>
-                        <Label Text="Acercamiento: {Binding CloseApproachDate}" />
-                        <Label Text="Distancia de paso: {Binding MissDistanceKm:F0} km"/>
-                        <Label Text="Peligroso: {Binding IsPotentiallyHazardous}" TextColor="Red"/>
+                        <Label Text="{Binding Description}" LineBreakMode="WordWrap"/>
+                        <Image Source="{Binding Url}" Aspect="AspectFill" HeightRequest="200"/>
+                        <Label Text="{Binding MediaType}" FontAttributes="Italic"/>
                     </StackLayout>
                 </Frame>
             </DataTemplate>

@@ -19,8 +19,7 @@ namespace Asteroids_App.ViewModels
 
         private async void LoadNeos()
         {
-            var list = await _neoService.GetNeoFeedAsync(DateTime.Now.ToString("yyyy-MM-dd"),
-                                                        DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"));
+            var list = await _neoService.GetNeoFeedAsync("mars"); // Cambia la palabra clave a tu gusto
             foreach (var neo in list)
             {
                 Neos.Add(neo);
@@ -31,5 +30,4 @@ namespace Asteroids_App.ViewModels
         private void OnPropertyChanged([CallerMemberName] string name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
-
 }

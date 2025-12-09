@@ -3,10 +3,8 @@
     public class Neo
     {
         public string Name { get; set; }
-        public double EstimatedDiameterMin { get; set; }
-        public double EstimatedDiameterMax { get; set; }
-        public bool IsPotentiallyHazardous { get; set; }
-        public string CloseApproachDate { get; set; }
-        public double MissDistanceKm { get; set; }
+        public string Description { get; set; }
+        public string MediaType { get; set; }
+        public string Url { get; set; }
     }
 }
