@@ -7,10 +7,5 @@
             InitializeComponent();
             MainPage = new NavigationPage(new Views.MainPage());
         }
-
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
     }
 }
