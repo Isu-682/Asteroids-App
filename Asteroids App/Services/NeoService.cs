@@ -5,7 +5,7 @@ namespace Asteroids_App.Services
 {
     public class NeoService
     {
-        private const string ApiKey = "f1fDCyYt7LcJieTMdXSZDbycinJCX6sYO1WOvZcW";
+        private const string ApiKey = "TU_API_KEY";
         private readonly HttpClient _httpClient;
 
         public NeoService()
@@ -36,7 +36,6 @@ namespace Asteroids_App.Services
                         EstimatedDiameterMax = item.GetProperty("estimated_diameter").GetProperty("kilometers").GetProperty("estimated_diameter_max").GetDouble(),
                         IsPotentiallyHazardous = item.GetProperty("is_potentially_hazardous_asteroid").GetBoolean(),
                         CloseApproachDate = item.GetProperty("close_approach_data")[0].GetProperty("close_approach_date").GetString(),
-                        MissDistanceKm = double.Parse(item.GetProperty("close_approach_data")[0].GetProperty("miss_distance").GetProperty("kilometers").GetString())
                     };
                     neos.Add(neo);
                 }
