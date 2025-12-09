@@ -3,15 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Asteroids_App.Views.MainPage"
              Title="NASA Media">
-    <CollectionView ItemsSource="{Binding Neos}">
+    <CollectionView ItemsSource="{Binding Neos}"
+                    Margin="10"
+                    VerticalOptions="FillAndExpand">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Frame Margin="5" Padding="10" BorderColor="Gray">
-                    <StackLayout>
-                        <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
-                        <Label Text="{Binding Description}" LineBreakMode="WordWrap"/>
-                        <Image Source="{Binding Url}" Aspect="AspectFill" HeightRequest="200"/>
-                        <Label Text="{Binding MediaType}" FontAttributes="Italic"/>
+                <Frame Margin="5"
+                       Padding="10"
+                       BorderColor="Gray"
+                       CornerRadius="15"
+                       HasShadow="True"
+                       BackgroundColor="black">
+                    <StackLayout Spacing="8">
+                        <Label Text="{Binding Name}" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               LineBreakMode="TailTruncation"/>
+
+                        <!-- Imagen ajustable -->
+                        <Image Source="{Binding Url}" 
+                               Aspect="AspectFill" 
+                               HeightRequest="200"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center"/>
+
+                        <Label Text="{Binding Description}" 
+                               LineBreakMode="WordWrap" 
+                               FontSize="14"/>
                     </StackLayout>
                 </Frame>
             </DataTemplate>
